@@ -46,6 +46,10 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'appUser' => [
+            'driver' => 'passport',
+            'provider' => 'appUsers',
+        ],
     ],
 
     /*
@@ -75,6 +79,10 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+        'appUsers' => [
+            'driver' => 'eloquent',
+            'model' => App\AppUsers::class,
+        ],
     ],
 
     /*
