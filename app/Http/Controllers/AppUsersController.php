@@ -34,8 +34,8 @@ class AppUsersController extends Controller
     }
     public function login(Request $request)
     {
-        //$str = "Hello In login";
-        //print $str;
+        $str = "Hello In login";
+        print $str;
 
         $request->validate([
             'email' => 'bail|required|email',
@@ -69,6 +69,8 @@ class AppUsersController extends Controller
             $user['device_token'] = $request->device_token;
             $user->save();
             $user['token'] = $token;
+            $str = "success In login";
+            print $str;
             return response()->json(['msg' => 'Welcome back to home of beauty ', 'data' => $user, 'success' => true], 200);
         } else {
             return response()->json(['msg' => ' Email and Password do not match with our records', 'data' => null, 'success' => false], 200);
